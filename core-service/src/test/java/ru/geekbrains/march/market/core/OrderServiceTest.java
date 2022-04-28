@@ -80,7 +80,7 @@ public class OrderServiceTest {
         orderService.createNewOrder(username);
 
         Mockito.verify(orderRepository, Mockito.times(1)).save(ArgumentMatchers.any());
-
+        Mockito.verify(cartServiceIntegration, Mockito.times(1)).clearCart();
     }
 
 }
