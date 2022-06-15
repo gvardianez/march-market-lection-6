@@ -1,11 +1,11 @@
 server:
-  port: 8189
+  port: 8187
   servlet:
-    context-path: /market-core
+    context-path: /market-auth
 spring:
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:market-core;MODE=PostgreSQL
+    url: jdbc:h2:mem:market-auth;MODE=PostgreSQL
     username: sa
     password:
   jpa:
@@ -18,10 +18,6 @@ spring:
       enabled: true
       settings:
         web-allow-others: false
-
-integrations:
-  cart-service:
-    url: http://localhost:8190/market-cart/
-    connect-timeout: 5000
-    read-timeout: 10000
-    write-timeout: 5000
+jwt:
+  secret: h4f8093h4f983yhrt9834hr0934hf0hf493g493gf438rh438th34g34g
+  lifetime: 1000
